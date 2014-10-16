@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* Tabs CSS Document */
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Main CSS */
+
+body {
+    font:.9em Arial,Helvetica,sans-serif;
+    color:#343434;
+    background:#000;
+}
+
+h2 {
+    font-size:1.5em;
+    margin:0;
+    text-align:center;
+}
+
+p {
+    letter-spacing:.5px;
+    padding:16px 0;
+}
+
+a {
+    text-decoration:none;
+    border:none;
+    color:#214984;
+}
+
+section {
+    width:100%;
+    float:left;
+    background:#F7F8F9;
+}
+
+img {
+    max-width:100%;
+}
+
+.row {
+    width:90%;
+    margin:0 auto;
+    max-width:850px;
+    display:block;
+    padding:50px 0;
+}
+
+.linklist li {
+    list-style:none;
+    font-weight:700;
+    padding:5px;
+}
+
+/********************************** Tabs CSS*/
+.tabs-container div {
+    display:none;
+    clear:both;
+    margin:0;
+}
+
+.tabs-container .selected-content {
+    background:#FFF;
+    border:1px solid #DEDEDE;
+    padding:12px 24px;
+    position:relative;
+    top:-1px;
+    display:block;
+}
+
+.tab {
+    background:#F2F2F2;
+    border-top:1px solid #DEDEDE;
+    border-left:1px solid #DEDEDE;
+    border-right:1px solid #DEDEDE;
+    margin-left:-1px;
+    padding:12px 24px;
+    cursor:pointer;
+}
+
+.tab a {
+    color:#000;
+}
+
+.tab:nth-child(1) {
+    margin-left:0;
+}
+
+.selected_tab {
+    background:#FFF;
+    border-top:1px solid #DEDEDE;
+    border-left:1px solid #DEDEDE;
+    border-right:1px solid #DEDEDE;
+    position:relative;
+    z-index:1;
+}
+
+.selected_tab a {
+    color:#D50013;
+}
+
+.tabs-container ul li {
+    float:left;
+    list-style:none;
+    display:block;
+    font-size:1em;
+    padding:12px 24px;
+}
+
+
+
