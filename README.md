@@ -37,7 +37,7 @@ jQuery Tabs allows you to create tabbed navagation for displaying content..
 
      <!- Link jQuery ->
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
- 	 <!- Link Curtail ->
+ 	 <!- Link Tabs ->
 	 <script src="js/tabs.min.js"></script>
 
 	 </body>
