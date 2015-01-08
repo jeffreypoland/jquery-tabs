@@ -1,10 +1,4 @@
-/*!
- * Copyright 2014, Jeffrey Poland
- * Released under the MIT License.
- * http://jquery.org/license
- * Title: Tabs
-*/
-
+//JP Tabs ///////////////////////////////// JP Tabs /////////////////////////////////
 $(function($) {
 
     $.fn.tabs = function(options) {
@@ -19,20 +13,17 @@ $(function($) {
             var content = $(this).find('.selected_tab').attr('data-tab');
 
             $('.' + content).addClass('selected-content');
-            $('.' + content).children().css('display', 'none');
-            $('.' + content).children().fadeIn();
+            $('.' + content).children().css('opacity', '0').fadeTo('slow', 1);
 
         });
 
-        $('.tab').click(function(e) {
+        $(this).find('.tab').click(function(e) {
             e.preventDefault();
 
             var myDiv = $(this).attr('data-tab');
             var parent = $(this).parent().parent();
             $(parent).find('div').removeClass('selected-content');
-            $(parent).find('.' + myDiv).addClass('selected-content');
-            $(parent).find('.' + myDiv).children().css('display', 'none');
-            $(parent).find('.' + myDiv).children().fadeIn();
+            $(parent).find('.' + myDiv).addClass('selected-content').children().css('opacity', '0').fadeTo('slow', 1);
             $(parent).find('li').removeClass('selected_tab');
             $(this).addClass('selected_tab');
 
@@ -40,27 +31,26 @@ $(function($) {
         });
 
         function hash() {
-            var p = window.location.hash.substring(1);
+            var getHash = window.location.hash.substring(1);
             
-            var h = $(tabsThis).find('ul').find("[data-tab='" + p  + "']");
+            var findInDataTab = $(tabsThis).find('ul').find("[data-tab='" + getHash  + "']");
             
-            var i = $(h).attr('data-tab');
-            
-          
+            var openTab = $(findInDataTab).attr('data-tab');
+                      
+            if (openTab === getHash) {
 
-            if (i === p) {
-
-                $('.' + i).parent().find('div').removeClass('selected-content');
-                $('.' + i).addClass('selected-content');
-                $('.' + i).addClass('selected-content').children().css('display', 'none');
-                $('.' + i).addClass('selected-content').children().fadeIn();
-                $('.' + i).parent().find('li').removeClass('selected_tab');
-                $('.' + i).parent().find('li[ data-tab=' + p + ']').addClass('selected_tab');
+                $('.' + openTab).parent().find('div').removeClass('selected-content');
+                $('.' + openTab).addClass('selected-content').children().css('opacity', '0').fadeTo('slow', 1);
+                $('.' + openTab).parent().find('li').removeClass('selected_tab');
+                $('.' + openTab).parent().find('li[ data-tab=' + getHash + ']').addClass('selected_tab');
 
             }
             
         }
-        hash();
+        
+        if(window.location.hash){
+         hash();
+        }
 
         $(window).on('hashchange', function() {
             hash();
